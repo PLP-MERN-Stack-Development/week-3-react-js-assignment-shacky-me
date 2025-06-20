@@ -25,7 +25,7 @@ const Footer = () => {
           >
             React
           </a>
-          .
+          . Designed by Meshack Kigen
         </p>
       </div>
     </div>

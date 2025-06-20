@@ -1,24 +1,18 @@
-const Card = () => {
+const Card = ({ image, description }) => {
   return (
-    <div className="card bg-base-100 w-96 shadow-sm">
-      <figure>
+    <div>
+      <div className="max-w-sm mx-auto my-5 md:mx-5 bg-white rounded-lg shadow-md overflow-hidden">
         <img
-          src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-          alt="Shoes"
+          className="w-full h-48 object-cover"
+          src={image}
+          alt="Placeholder"
         />
-      </figure>
-      <div className="card-body">
-        <h2 className="card-title">
-          Card Title
-          <div className="badge badge-secondary">NEW</div>
-        </h2>
-        <p>
-          A card component has a figure, a body part, and inside body there are
-          title and actions parts
-        </p>
-        <div className="card-actions justify-end">
-          <div className="badge badge-outline">Fashion</div>
-          <div className="badge badge-outline">Products</div>
+        <div className="p-6">
+          <h2 className="text-xl font-semibold mb-2">Card Title</h2>
+          <p className="text-gray-700 mb-4">{description}</p>
+          <button className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+            Action Button
+          </button>
         </div>
       </div>
     </div>

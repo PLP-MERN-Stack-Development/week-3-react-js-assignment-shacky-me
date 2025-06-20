@@ -39,9 +39,9 @@ const Navbar = () => {
           </button>
 
           {/* respect System OS */}
-          <button onClick={toggleTheme} className="text-xl">
+          {/* <button onClick={toggleTheme} className="text-xl">
             <HiOutlineComputerDesktop />
-          </button>
+          </button> */}
         </div>
       </nav>
     </header>
