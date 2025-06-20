@@ -1,27 +1,41 @@
 import { useEffect, useState } from "react";
 import Card from "../components/Card";
 import { CiSearch } from "react-icons/ci";
+import { fetchPosts } from "../api/posts";
 
 const Posts = () => {
   const [posts, setPosts] = useState([]);
 
   // Fetching data from an API
+
   useEffect(() => {
-    const fetchPosts = async () => {
+    const loadPosts = async () => {
       try {
-        const res = await fetch("https://jsonplaceholder.typicode.com/posts");
-        const data = await res.json();
+        const data = await fetchPosts(); // ✅ clean call
         setPosts(data);
       } catch (error) {
         console.error("Error fetching posts:", error);
       }
     };
-    fetchPosts();
+
+    loadPosts();
   }, []);
+  // useEffect(() => {
+  //   const fetchPosts = async () => {
+  //     try {
+  //       const res = await fetch("https://jsonplaceholder.typicode.com/posts");
+  //       const data = await res.json();
+  //       setPosts(data);
+  //     } catch (error) {
+  //       console.error("Error fetching posts:", error);
+  //     }
+  //   };
+  //   fetchPosts();
+  // }, []);
 
   // Generate a unique image URL for each post
   const getImageUrl = (id) =>
-    `https://via.placeholder.com/400x200?text=Post+${id}`;
+    `https://source.unsplash.com/random/400x200?sig=${id}`;
 
   return (
     <>
