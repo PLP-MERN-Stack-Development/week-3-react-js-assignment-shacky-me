@@ -1,15 +1,19 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect } from "react";
+import useLocalStorage from "../hooks/useLocalStorage";
 
 const ThemeContext = createContext();
 
 const ThemeProvider = ({ children }) => {
-  const [theme, setTheme] = useState("light"); // Default theme can be 'light' or 'dark'
+  const [theme, setTheme] = useLocalStorage("theme", "light");
+
+  // Apply theme to <body> or <html> on change
+  useEffect(() => {
+    document.body.className =
+      theme === "light" ? "bg-white text-black" : "bg-[#0B192C] text-white";
+  }, [theme]);
 
   const toggleTheme = () => {
     setTheme((prev) => (prev === "light" ? "dark" : "light"));
-    // Apply theme to the body
-    document.body.className =
-      theme === "light" ? "bg-black text-white" : "bg-white";
   };
 
   return (

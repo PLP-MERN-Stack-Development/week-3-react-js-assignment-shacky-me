@@ -2,9 +2,10 @@ import Button from "./Button";
 import { useState, useEffect } from "react";
 import { MdOutlineTaskAlt } from "react-icons/md";
 import { FaTasks } from "react-icons/fa";
+import useLocalStorage from "../hooks/useLocalStorage";
 
 const TaskManager = () => {
-  const [tasks, setTasks] = useState([]);
+  const [tasks, setTasks] = useLocalStorage("tasks", []);
   const [taskInput, setTaskInput] = useState("");
   const [filter, setFilter] = useState("all");
 
@@ -68,7 +69,7 @@ const TaskManager = () => {
             value={taskInput}
             onChange={handleInputChange}
             placeholder="Add a new task..."
-            className="border border-gray-300 rounded-md p-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent mb-2"
+            className="border border-gray-300 rounded-md p-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent mb-2 text-gray-600"
           />
         </label>
 
