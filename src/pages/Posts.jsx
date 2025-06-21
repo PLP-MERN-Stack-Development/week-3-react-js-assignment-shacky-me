@@ -64,7 +64,7 @@ const Posts = () => {
               setQuery(e.target.value);
               setPage(1); // reset to first page when search changes
             }}
-            className="w-full border border-gray-300 rounded-lg px-4 py-2 pr-10 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full border border-gray-300 text-white rounded-lg px-4 py-2 pr-10 focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
           <CiSearch className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500" />
         </div>

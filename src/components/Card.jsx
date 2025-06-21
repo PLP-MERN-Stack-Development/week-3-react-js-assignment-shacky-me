@@ -8,7 +8,7 @@ const Card = ({ image, header, description }) => {
           alt="Placeholder"
         />
         <div className="p-6 flex flex-col h-full justify-between">
-          <h2 className="text-xl font-semibold mb-2">{header}</h2>
+          <h2 className="text-xl font-semibold mb-2 text-gray-700">{header}</h2>
           <p className="text-gray-700 mb-4 flex-grow">{description}</p>
         </div>
       </div>
